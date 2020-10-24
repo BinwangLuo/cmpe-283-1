@@ -28,16 +28,29 @@
 4. Install make: sudo apt-get install make
 5. Install gcc: sudo apt-get install gcc
 6. Clone the Kernel code from GitHub: git clone https://github.com/torvalds/linux.git
+
+Kernel Code Compilation :
+* sudo apt-get install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev
+* uname -a
+* cp -v /boot/config-5.4.0-52-generic ./.config
+* make oldconfig
+* make -j
+* sudo make modules
+* sudo make modules_install
+* sudo make install
+* reboot
+* uname -a
+   <img src="screeshots/Picture12.png"/>
 7. Downloaded the Makefile and cmpe283-1.c file from the SJSU canvas
-8. Build the file using make
+ * Build the file using make
    <img src="screeshots/Picture1.png"/>
-9. After building the file check if there is kernel object file is created.
+ * After building the file check if there is kernel object file is created.
     <img src="screeshots/Picture2.png"/>
-10. After sudo insmod ./cmpe283-1.ko and dmesg the configuration of kernel is –
+ * After sudo insmod ./cmpe283-1.ko and dmesg the configuration of kernel is –
 Output of pinbased controls
     <img src="screeshots/Picture3.png"/>
-11. Then in the cmpe283-1.c file added the configuration of the various controls and build the file.
-12. To rebuild the file use commands – 
+ *  Then in the cmpe283-1.c file added the configuration of the various controls and build the file.
+ * To rebuild the file use commands – 
     * sudo rmmod cmpe283-1
     * sudo insmod ./cmpe283-1.ko
     * dmesg
